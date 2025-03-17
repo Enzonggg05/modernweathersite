@@ -1,0 +1,259 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+/*GLOBAL STYLES*/
+* {
+  font-family: Poppins;
+}
+
+body,
+html {
+  height: 100%;
+  width: 100%;
+  background-color: #202a3a;
+  margin: 0;
+}
+
+.left-container {
+  height: 100%;
+  width: 60%;
+}
+
+/*MAIN-CONTAINER*/
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  width: 100%;
+}
+
+/*CENTERED CONTAINER*/
+.centered-container {
+  display: flex;
+  margin: auto;
+  width: 70%;
+  height: 70%;
+  background-color: rgb(255, 255, 255);
+  border-radius: 1.5rem;
+  border: none;
+}
+
+/*LEFT CONTAINER*/
+.left-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 60%;
+  border-radius: 1.5rem;
+  border: none;
+  background-image: url("assets/weather_image/default.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.left-container h2 {
+  font-family: "League Spartan";
+  font-size: 2rem;
+  color: #ffffff;
+}
+
+.search-bar {
+  width: 100%;
+  text-align: center;
+  height: 3rem;
+  border: none;
+  border-radius: 1.5rem;
+}
+.search-bar input[type="text"] {
+  color: white;
+  width: 50%;
+  border: none;
+  border-radius: 1.5rem;
+  padding: 10px;
+  font-family: Poppins;
+  font-size: 1rem;
+  background: rgba(133, 133, 133, 0.15);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  -webkit-backdrop-filter: blur(11.1px);
+  backdrop-filter: blur(2px);
+  border: 1px solid rgb(105, 105, 105);
+}
+
+.search-bar i {
+  color: #ffffff;
+  font-size: 1.5rem;
+}
+
+.search-bar i:hover {
+  cursor: pointer;
+  color: rgb(122, 175, 255);
+}
+
+/*GLOBAL STYLE RIGHT CONTAINER*/
+.right-container {
+  height: 100%;
+  width: 40%;
+  padding-left: 1rem;
+  background-color: #ffffff;
+  border-radius: 1.5rem;
+}
+
+/*RIGHT CONTAINER HOME SECTION*/
+.home-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+.home-section h2 {
+  font-family: "League Spartan";
+  font-size: 3rem;
+  color: #202a3a;
+  text-align: end;
+  width: 80%;
+}
+
+.home-section p {
+  font-family: "Poppins";
+  font-size: 1rem;
+  color: #202a3a;
+  text-align: end;
+  width: 80%;
+}
+
+/*RIGHT CONTAINER WEATHER DATA HIDE*/
+.weather-data {
+  display: none;
+}
+
+/* RIGHT CONTAINER WEATHER DATA SECTION */
+.weather-data {
+  height: 100%;
+}
+
+/*DATA HEADER*/
+.header {
+  height: 15%;
+  padding-right: 1rem;
+  margin-right: 1rem;
+  border-bottom: black solid 5px;
+
+  h1 {
+    font-family: "League Spartan";
+    font-size: 3rem;
+    color: #202a3a;
+    text-align: end;
+    margin: 0;
+    margin-top: 1rem;
+  }
+  p {
+    font-family: "Poppins";
+    font-size: 1.5rem;
+    color: #000000;
+    margin: 0;
+
+    span {
+      font-weight: bold;
+      text-align: end;
+    }
+  }
+}
+
+/*DATA INFO*/
+.weather-info {
+  height: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.weather-status,
+.weather-details {
+  width: 50%;
+  height: 100%;
+  margin-top: 1rem;
+}
+
+.weather-status {
+  border-right: black solid 5px;
+}
+
+/*WEATHER STATUS LEFT*/
+.weather-status img {
+  width: 50%;
+  height: 25%;
+  margin-left: 4rem;
+}
+
+.weather-status h2 {
+  text-align: center;
+  margin: 0;
+}
+
+#weatherType {
+  font-size: 2rem;
+}
+
+#temperature {
+  margin-top: 3rem;
+}
+
+/*WEATHER STATUS RIGHT*/
+.weather-details {
+  margin-left: 1rem;
+}
+
+/*ERROR MESSAGE*/
+#errorMessage {
+  display: none;
+  h2 {
+    font-family: "League Spartan";
+    font-size: 2rem;
+    text-align: center;
+    margin: 0;
+  }
+  p {
+    font-family: "Poppins";
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 0;
+  }
+  i {
+    font-size: 3rem;
+  }
+}
+
+/*MEDIA QUERIES*/
+@media (max-width: 768px) {
+  /*MAIN CONTAINER*/
+  .centered-container {
+    /* margin: 0; */
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+  }
+
+  /*HIDE WEATHER INFO ON MOBILE IF NOTHING IS BEING SEARCHED*/
+  .right-container {
+    display: none;
+    /*DESIGN OF WEATHER INFO MOBILE*/
+    /* height: 20%; */
+    width: auto;
+    h1 {
+      font-size: 2rem;
+    }
+  }
+
+  /*LEFT CONTAINER DESIGN ON MOBILE*/
+  .left-container {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+}
